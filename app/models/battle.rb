@@ -37,6 +37,8 @@ class Battle < ApplicationRecord
 	    end
 
 		http = Net::HTTP.new(uri.host, port)
+		http.use_ssl = true
+		http.verify_mode = OpenSSL::SSL::VERIFY_NONE # Sets the HTTPS verify mode
 		request = Net::HTTP::Post.new(uri.request_uri)
 		request.set_form_data(self.as_json)
 
