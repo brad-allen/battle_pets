@@ -21,8 +21,8 @@ account4 = Account.find_by(user_id:user4.id)
 account4.permission = 'admin'
 account4.save
 
-arena1 = Arena.create!({name:"Bob's Battle Emporium", rated:"PG", url:"http://localhost:3001/", port:3001, updated_by:account1.id, created_by:account1.id})
-arena2 = Arena.create!({name:"Crazy Al's Arena", rated:"PG", url:"http://localhost:3002/", port:3002, updated_by:account1.id, created_by:account1.id})
+arena1 = Arena.create!({name:"Bob's Battle Emporium", rated:"PG", url:"https://desolate-sierra-84556.herokuapp.com/", port:443, updated_by:account1.id, created_by:account1.id})
+arena2 = Arena.create!({name:"Crazy Al's Arena", rated:"PG", url:"https://desolate-sierra-84556.herokuapp.com/", port:443, updated_by:account1.id, created_by:account1.id})
 
 battle_pet1 = BattlePet.create!({name: 'Achoo', about:'Sneeze attack!', status:'active', strength:3,  agility:6, wit:3, speed:6, wisdom:1, intelligence:2, magic:5, chi:2, healing_power:1, account_id:account1.id, updated_by:account1.id, created_by:account1.id})
 battle_pet2 = BattlePet.create!({name: 'Bonkers', about:'Berzerker attack!', status:'active', strength:6,  agility:3, wit:1, speed:6, wisdom:1, intelligence:1, magic:5, chi:2, healing_power:1, account_id:account1.id, updated_by:account1.id, created_by:account1.id})

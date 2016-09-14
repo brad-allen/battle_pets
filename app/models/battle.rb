@@ -40,6 +40,9 @@ class Battle < ApplicationRecord
 			true
 		rescue
 			puts 'FAILED ARENA BATTLE REQUEST : response =>' + response.inspect
+			puts 'FAILED ARENA BATTLE REQUEST : arena =>' + arena.inspect
+			puts 'FAILED ARENA BATTLE REQUEST : url =>' + arena.inspect
+			
 			false
 		end		
 	 end
