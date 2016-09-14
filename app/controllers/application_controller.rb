@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
 
   def load_account_information 
   	return @account = current_user.account if current_user.present? && current_user.account.present?
-  	@account = Account.new
+  	#@account = Account.new
+    return nil
   end
 
   def account_id 
