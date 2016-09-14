@@ -84,9 +84,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  DEFAULT_ARENA_URL = 'http://localhost:3001/'
-  DEFAULT_ARENA_V1_BATTLES_URL = 'http://localhost:3001/v1/battles/'
-  DEFAULT_ARENA_PORT = 3001
+  DEFAULT_ARENA_URL = 'https://desolate-sierra-84556.herokuapp.com/'
+  DEFAULT_ARENA_V1_BATTLES_URL = 'https://desolate-sierra-84556.herokuapp.com/v1/battles/'
+  DEFAULT_ARENA_PORT = 443
 
   USER_LEVEL_UP_EXPERIENCE = 10000
   BATTLE_PET_LEVEL_UP_EXPERIENCE = 1000
