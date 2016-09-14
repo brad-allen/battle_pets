@@ -1,0 +1,114 @@
+<%= form_for(account) do |f| %>
+  <% if account.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+      <% account.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field">
+    <%= f.label :id %>
+    <%= f.text_field :id, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :about %>
+    <%= f.text_field :about %>
+  </div>
+
+ <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :level %>
+    <%= f.number_field :level %>
+  </div>
+
+  <div class="field">
+    <%= f.label :experience %>
+    <%= f.number_field :experience %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gold %>
+    <%= f.number_field :gold %>
+  </div>
+
+  <div class="field">
+    <%= f.label :won %>
+    <%= f.number_field :won %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lost %>
+    <%= f.number_field :lost %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tied %>
+    <%= f.number_field :tied %>
+  </div>
+
+  <div class="field">
+    <%= f.label :town %>
+    <%= f.text_field :town %>
+  </div>
+
+  <div class="field">
+    <%= f.label :planet %>
+    <%= f.text_field :planet %>
+  </div>
+
+  <div class="field">
+    <%= f.label :galaxy %>
+    <%= f.text_field :galaxy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_at %>
+    <%= f.date_field :created_at, :disabled=>true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :updated_at %>
+    <%= f.date_field :updated_at, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_by %>
+    <%= f.number_field :updated_by, :disabled=>true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :created_by %>
+    <%= f.number_field :created_by, :disabled=>true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

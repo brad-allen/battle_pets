@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: 'test'
+  call_auth_code: 'qwerty'
+  arena_id: 1
+  user1_id: 1
+  user2_id: 2
+  pet1_id: 1
+  pet2_id: 2
+  battled_on: 2016-09-08 10:44:38
+  winning_user_id: 1
+  winning_pet_id: 1
+  battle_game_id: 1
+  play_for_keeps: 0
+  battle_game_id: 1
+  is_tie: 0
+  winner_experience: 100
+  loser_experience: 100
+  winner_gold: 100
+  status: 'invited'
+  updated_at: 2016-09-08 10:44:38
+  updated_by: 1
+  created_at: 2016-09-08 10:44:38
+  created_by: 1
+
+two:
+  id: 2
+  name: 'test2'
+  call_auth_code: 'qwerty2'
+  arena_id: 1
+  user1_id: 2
+  user2_id: 1
+  pet1_id: 2
+  pet2_id: 1
+  battled_on: 2016-09-08 10:44:38
+  winning_user_id: 1
+  winning_pet_id: 1
+  battle_game_id: 1
+  play_for_keeps: 0
+  battle_game_id: 1
+  is_tie: 0
+  winner_experience: 100
+  loser_experience: 100
+  winner_gold: 100
+  status: 'invited'
+  updated_at: 2016-09-08 10:44:38
+  updated_by: 1
+  created_at: 2016-09-08 10:44:38
+  created_by: 1

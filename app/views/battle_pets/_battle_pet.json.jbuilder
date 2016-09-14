@@ -1,0 +1,2 @@
+json.extract! battle_pet, :id, :id, :name, :about, :image, :level, :experience, :won, :lost, :tied, :town, :planet, :galaxy, :magic_item_id, :magic_item_uses_left, :retired, :auto_accept_play_for_points_requests, :status,  :account_id, :previous_owner_id, :account_id, :strength, :agility, :wit, :speed, :wisdom, :intelligence, :magic, :chi, :healing_power, :updated_at, :updated_by, :created_at, :created_by, :created_at, :updated_at
+json.url battle_pet_url(battle_pet, format: :json)

@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+      <th>About</th>
+      <th>UserId</th>
+      <th>Email</th>
+      <th>Image</th>
+      <th>Level</th>
+      <th>Experience</th>
+      <th>Gold</th>
+      <th>Won</th>
+      <th>Lost</th>
+      <th>Tied</th>
+      <th>Town</th>
+      <th>Planet</th>
+      <th>Galaxy</th>
+      <th>Updated by</th>
+      <th>Created by</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.id %></td>
+        <td><%= account.username %></td>
+        <td><%= account.about %></td>
+        <td><%= account.user_id %></td>
+        <td><%= account.email %></td>
+        <td><%= account.image %></td>
+        <td><%= account.level %></td>
+        <td><%= account.experience %></td>
+        <td><%= account.gold %></td>
+        <td><%= account.won %></td>
+        <td><%= account.lost %></td>
+        <td><%= account.tied %></td>
+        <td><%= account.town %></td>
+        <td><%= account.planet %></td>
+        <td><%= account.galaxy %></td>
+        <td><%= account.updated_by %></td>
+        <td><%= account.created_by %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account', new_account_path %>

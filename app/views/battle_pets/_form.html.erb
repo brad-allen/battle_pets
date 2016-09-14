@@ -1,0 +1,167 @@
+<%= form_for(battle_pet) do |f| %>
+  <% if battle_pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(battle_pet.errors.count, "error") %> prohibited this battle_pet from being saved:</h2>
+
+      <ul>
+      <% battle_pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :about %>
+    <%= f.text_field :about %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :level %>
+    <%= f.number_field :level %>
+  </div>
+
+  <div class="field">
+    <%= f.label :experience %>
+    <%= f.number_field :experience %>
+  </div>
+
+  <div class="field">
+    <%= f.label :won %>
+    <%= f.number_field :won %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lost %>
+    <%= f.number_field :lost %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tied %>
+    <%= f.number_field :tied %>
+  </div>
+
+  <div class="field">
+    <%= f.label :town %>
+    <%= f.text_field :town %>
+  </div>
+
+  <div class="field">
+    <%= f.label :planet %>
+    <%= f.text_field :planet %>
+  </div>
+
+  <div class="field">
+    <%= f.label :galaxy %>
+    <%= f.text_field :galaxy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :retired %>
+    <%= f.text_field :retired %>
+  </div>
+
+  <div class="field">
+    <%= f.label :auto_accept_play_for_points_requests %>
+    <%= f.text_field :auto_accept_play_for_points_requests %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :account_id %>
+    <%= f.number_field :account_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :previous_owner_id %>
+    <%= f.number_field :previous_owner_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :original_owner_id %>
+    <%= f.number_field :original_owner_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :strength %>
+    <%= f.number_field :strength %>
+  </div>
+
+  <div class="field">
+    <%= f.label :agility %>
+    <%= f.number_field :agility %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wit %>
+    <%= f.number_field :wit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :speed %>
+    <%= f.number_field :speed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wisdom %>
+    <%= f.number_field :wisdom %>
+  </div>
+
+  <div class="field">
+    <%= f.label :intelligence %>
+    <%= f.number_field :intelligence %>
+  </div>
+
+  <div class="field">
+    <%= f.label :magic %>
+    <%= f.number_field :magic %>
+  </div>
+
+  <div class="field">
+    <%= f.label :chi %>
+    <%= f.number_field :chi %>
+  </div>
+
+  <div class="field">
+    <%= f.label :healing_power %>
+    <%= f.number_field :healing_power %>
+  </div>
+
+ <div class="field">
+    <%= f.label :created_at %>
+    <%= f.date_field :created_at, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_at %>
+    <%= f.date_field :updated_at, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_by %>
+    <%= f.number_field :updated_by, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_by %>
+    <%= f.number_field :created_by, :disabled=>true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

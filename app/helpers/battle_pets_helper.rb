@@ -1,0 +1,2 @@
+module BattlePetsHelper
+end

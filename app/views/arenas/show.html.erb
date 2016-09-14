@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @arena.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @arena.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @arena.description %>
+</p>
+
+<p>
+  <strong>Rated:</strong>
+  <%= @arena.rated %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @arena.url %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @arena.updated_at %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @arena.updated_by %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @arena.created_at %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @arena.created_by %>
+</p>
+
+<%= link_to 'Edit', edit_arena_path(@arena) %> |
+<%= link_to 'Back', arenas_path %>

@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Arenas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Rated</th>
+      <th>Url</th>
+      <th>Updated by</th>
+      <th>Created by</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @arenas.each do |arena| %>
+      <tr>
+        <td><%= arena.id %></td>
+        <td><%= arena.name %></td>
+        <td><%= arena.description %></td>
+        <td><%= arena.rated %></td>
+        <td><%= arena.url %></td>
+        <td><%= arena.updated_by %></td>
+        <td><%= arena.created_by %></td>
+        <td><%= link_to 'Show', arena %></td>
+        <td><%= link_to 'Edit', edit_arena_path(arena) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Arena', new_arena_path %>

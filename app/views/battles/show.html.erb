@@ -1,0 +1,93 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @battle.id %>
+</p>
+
+<p>
+  <strong>Arena:</strong>
+  <%= @battle.arena_id %>
+</p>
+
+<p>
+  <strong>Pet1:</strong>
+  <%= @battle.pet1_id %>
+</p>
+
+<p>
+  <strong>Pet2:</strong>
+  <%= @battle.pet2_id %>
+</p>
+
+<p>
+  <strong>Battled on:</strong>
+  <%= @battle.battled_on %>
+</p>
+
+<p>
+  <strong>Winning User Id:</strong>
+  <%= @battle.winning_user_id %>
+</p>
+
+<p>
+  <strong>Winning Pet Id:</strong>
+  <%= @battle.winning_pet_id %>
+</p>
+
+<p>
+  <strong>Battle game:</strong>
+  <%= @battle.battle_game_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @battle.status %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @battle.updated_at %>
+</p>
+
+
+<p>
+  <strong>Status:</strong>
+  <%= @battle.status %>
+</p>
+
+
+<p>
+  <strong>Play for Keeps:</strong>
+  <%= @battle.play_for_keeps %>
+</p>
+
+
+<p>
+  <strong>Winner XP:</strong>
+  <%= @battle.winner_experience %>
+</p>
+
+
+<p>
+  <strong>Loser XP:</strong>
+  <%= @battle.winner_experience %>
+</p>
+
+<p>
+  <strong>Winner Gold:</strong>
+  <%= @battle.winner_gold %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @battle.created_at %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @battle.created_by %>
+</p>
+
+<%= link_to 'Edit', edit_battle_path(@battle) %> |
+<%= link_to 'Back', battles_path %>

@@ -1,0 +1,82 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Battle Pets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>About</th>
+      <th>Image</th>
+      <th>Level</th>
+      <th>Experience</th>
+      <th>Won</th>
+      <th>Lost</th>
+      <th>Tied</th>
+      <th>Town</th>
+      <th>Planet</th>
+      <th>Galaxy</th>
+      <th>Retired</th>
+      <th>Auto accept play for points requests</th>
+      <th>Status</th>
+      <th>Current owner</th>
+      <th>Previous owner</th>
+      <th>Original owner</th>
+      <th>Strength</th>
+      <th>Agility</th>
+      <th>Wit</th>
+      <th>Speed</th>
+      <th>Wisdom</th>
+      <th>Intelligence</th>
+      <th>Magic</th>
+      <th>Chi</th>
+      <th>Healing power</th>
+      <th>Updated by</th>
+      <th>Created by</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @battle_pets.each do |battle_pet| %>
+      <tr>
+        <td><%= battle_pet.id %></td>
+        <td><%= battle_pet.name %></td>
+        <td><%= battle_pet.about %></td>
+        <td><%= battle_pet.image %></td>
+        <td><%= battle_pet.level %></td>
+        <td><%= battle_pet.experience %></td>
+        <td><%= battle_pet.won %></td>
+        <td><%= battle_pet.lost %></td>
+        <td><%= battle_pet.tied %></td>
+        <td><%= battle_pet.town %></td>
+        <td><%= battle_pet.planet %></td>
+        <td><%= battle_pet.galaxy %></td>
+        <td><%= battle_pet.retired %></td>
+        <td><%= battle_pet.auto_accept_play_for_points_requests %></td>
+        <td><%= battle_pet.status %></td>     
+        <td><%= battle_pet.account_id %></td>
+        <td><%= battle_pet.previous_owner_id %></td>
+        <td><%= battle_pet.original_owner_id %></td>
+        <td><%= battle_pet.strength %></td>
+        <td><%= battle_pet.agility %></td>
+        <td><%= battle_pet.wit %></td>
+        <td><%= battle_pet.speed %></td>
+        <td><%= battle_pet.wisdom %></td>
+        <td><%= battle_pet.intelligence %></td>
+        <td><%= battle_pet.magic %></td>
+        <td><%= battle_pet.chi %></td>
+        <td><%= battle_pet.healing_power %></td>
+        <td><%= battle_pet.updated_by %></td>
+        <td><%= battle_pet.created_by %></td>
+        <td><%= link_to 'Show', battle_pet %></td>
+        <td><%= link_to 'Edit', edit_battle_pet_path(battle_pet) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Battle Pet', new_battle_pet_path %>

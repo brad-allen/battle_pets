@@ -1,0 +1,9 @@
+
+one:
+  email: 'admin@battle.com'
+  encrypted_password: '$2a$11$3erLW.rivEkOhLaLUb7myuZhHsJBnbAHC9nprWYEfaEyZUD1B9oMu'
+
+two:
+  email: 'admin2@battle.com'
+  encrypted_password: '$2a$11$3erLW.rivEkOhLaLUb7myuZhHsJBnbAHC9nprWYEfaEyZUD1B9oMu'
+ 

@@ -1,0 +1,57 @@
+<%= form_for(arena) do |f| %>
+  <% if arena.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(arena.errors.count, "error") %> prohibited this arena from being saved:</h2>
+
+      <ul>
+      <% arena.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rated %>
+    <%= f.text_field :rated %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_at %>
+    <%= f.date_field :created_at, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_at %>
+    <%= f.date_field :updated_at, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_by %>
+    <%= f.number_field :updated_by, :disabled=>true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_by %>
+    <%= f.number_field :created_by, :disabled=>true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

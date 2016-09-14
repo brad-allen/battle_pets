@@ -1,0 +1,1 @@
+json.array! @battle_pets, partial: 'battle_pets/battle_pet', as: :battle_pet
