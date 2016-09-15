@@ -20,25 +20,21 @@ class Battle < ApplicationRecord
 		fight_extension = id.to_s + '/fight'
 		uri = URI.parse(DEFAULT_ARENA_V1_BATTLES_URL + id.to_s + '/fight')	    #default for now, move to common area
 		
-		puts 'PRE CHECK URL =>' + DEFAULT_ARENA_V1_BATTLES_URL + id.to_s + '/fight'
-
 		port = DEFAULT_ARENA_PORT
-		puts 'PRE CHECK PORT =>' + port.to_s
 
 	    if arena_id.present?
 	    	arena = Arena.find_by_id(arena_id)
 	    	if arena.present? && arena.id > 0
 				uri = URI.parse(arena.url+'/v1/battles/' +fight_extension) 				
 				port = arena.port
-
-				puts 'URL =>' + arena.url+'/v1/battles/' +fight_extension
-				puts 'PORT =>' + port.to_s
 	    	end
 	    end
 
 		http = Net::HTTP.new(uri.host, port)
-		http.use_ssl = true
-		http.verify_mode = OpenSSL::SSL::VERIFY_NONE # Sets the HTTPS verify mode
+		if USE_SSL
+	    	http.use_ssl = true
+			http.verify_mode = OpenSSL::SSL::VERIFY_NONE # Sets the HTTPS verify mode
+		end
 		request = Net::HTTP::Post.new(uri.request_uri)
 		request.set_form_data(self.as_json)
 

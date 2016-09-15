@@ -31,6 +31,12 @@
     <%= f.text_field :url %>
   </div>
 
+
+  <div class="field">
+    <%= f.label :port %>
+    <%= f.number_field :port %>
+  </div>
+
   <div class="field">
     <%= f.label :created_at %>
     <%= f.date_field :created_at, :disabled=>true %>

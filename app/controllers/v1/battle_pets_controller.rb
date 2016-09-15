@@ -83,7 +83,7 @@ class V1::BattlePetsController < V1::V1Controller
     
     return head(:bad_gateway) unless battle.send_battle_to_arena
 
-    head(:ok)
+    respond_with battle
   end
 
   #Helpers

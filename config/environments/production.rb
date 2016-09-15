@@ -90,5 +90,7 @@ Rails.application.configure do
 
   USER_LEVEL_UP_EXPERIENCE = 10000
   BATTLE_PET_LEVEL_UP_EXPERIENCE = 1000
+
+  USE_SSL = true
   
 end
