@@ -25,7 +25,7 @@ An admin can add more arenas to the battle pets manager in order to allow new ar
 ##Architecture Notes
 
 I chose Devise for user sign up and authentication due to its ease of use.  It isn't emailing at this time, but it does allow sign up, sign in and uses the proper auth throughout the applications.
-Both the Pet Manager and the Arenas have different auth, so will require different sign ins as they would generally be managed by different teams.  
+Both the Pet Manager and the Arenas have different auth, so will require different sign ins as they would generally be managed by different teams.  You only need to sign into the Arena application if you are an admin planning on creating or editing battle games for the manager to select from, otherwise, signing into Battle Pets is sufficient to play.
 
 I chose Sidekiq for the background task manager, which requires redis, as I have used both in the past and they seemed good for the task.
 
