@@ -1,4 +1,4 @@
-#BattlePets
+#Battle Pets
 
 Battle Pets is a multi service application that allows users to create battle pets (in the Battle Pet Manager) and then send them to different Arenas to battle in different battle games.
 
