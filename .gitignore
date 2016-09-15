@@ -1,4 +1,6 @@
 *.gem
+*.log
+*.sqlite3
 *.rbc
 /.config
 /coverage/
