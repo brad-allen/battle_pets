@@ -37,8 +37,7 @@ class BattlePet < ApplicationRecord
   end
 
    def generate_training_battle_pet   
-    lvl = level
-    BattlePet.new({name:"Mr. Battle Pet", status:'active', level:lvl, experience: lvl*BATTLE_PET_LEVEL_UP_EXPERIENCE+rand(1..(BATTLE_PET_LEVEL_UP_EXPERIENCE-1)),  strength: more_strength*lvl, agility: more_agility*lvl, wit: more_wit*lvl, speed: more_speed*lvl, wisdom: more_wisdom*lvl, intelligence: more_intelligence*lvl, magic: more_magic*lvl, chi: more_chi*lvl, healing_power: more_healing_power*lvl})
+    BattlePet.new({name:"Mr. Battle Pet", status:'active', level:level, experience: ((level-1)*BATTLE_PET_LEVEL_UP_EXPERIENCE)+rand(1..(BATTLE_PET_LEVEL_UP_EXPERIENCE-1)),  strength: more_strength*level, agility: more_agility*level, wit: more_wit*level, speed: more_speed*level, wisdom: more_wisdom*level, intelligence: more_intelligence*level, magic: more_magic*level, chi: more_chi*level, healing_power: more_healing_power*level})    
   end
 
   def initialize_pet

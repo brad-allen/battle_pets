@@ -32,11 +32,11 @@ end
 arena1 = Arena.create!({name:"Bob's Battle Emporium", rated:"PG", url:arena_url, port:arena_port, updated_by:account1.id, created_by:account1.id})
 arena2 = Arena.create!({name:"Crazy Al's Arena", rated:"PG", url:arena_url, port:arena_port, updated_by:account1.id, created_by:account1.id})
 
-battle_pet1 = BattlePet.create!({name: 'Achoo', about:'Sneeze attack!', status:'active', strength:3,  agility:6, wit:3, speed:6, wisdom:1, intelligence:2, magic:5, chi:2, healing_power:1, account_id:account1.id, updated_by:account1.id, created_by:account1.id})
-battle_pet2 = BattlePet.create!({name: 'Bonkers', about:'Berzerker attack!', status:'active', strength:6,  agility:3, wit:1, speed:6, wisdom:1, intelligence:1, magic:5, chi:2, healing_power:1, account_id:account1.id, updated_by:account1.id, created_by:account1.id})
+battle_pet1 = BattlePet.create!({name: 'Achoo', about:'Sneeze attack!', status:'active', strength:8,  agility:9, wit:6, speed:6, wisdom:1, intelligence:8, magic:5, chi:2, healing_power:1, account_id:account1.id, updated_by:account1.id, created_by:account1.id})
+battle_pet2 = BattlePet.create!({name: 'Bonkers', about:'Berzerker attack!', status:'active', strength:6,  agility:8, wit:1, speed:6, wisdom:1, intelligence:7, magic:5, chi:2, healing_power:1, account_id:account1.id, updated_by:account1.id, created_by:account1.id})
 
-battle_pet3 = BattlePet.create!({name: 'Larry', about:'Surprise attack!', status:'active', strength:2,  agility:6, wit:6, speed:6, wisdom:4, intelligence:5, magic:2, chi:2, healing_power:2, account_id:account2.id, updated_by:account2.id, created_by:account2.id})
-battle_pet4 = BattlePet.create!({name: "Achoo's Brother", about:'Cough attack!', status:'active', strength:5,  agility:6, wit:3, speed:6, wisdom:1, intelligence:2, magic:5, chi:2, healing_power:1, account_id:account3.id, updated_by:account3.id, created_by:account3.id})
+battle_pet3 = BattlePet.create!({name: 'Larry', about:'Surprise attack!', status:'active', strength:7,  agility:6, wit:6, speed:8, wisdom:4, intelligence:8, magic:2, chi:2, healing_power:2, account_id:account2.id, updated_by:account2.id, created_by:account2.id})
+battle_pet4 = BattlePet.create!({name: "Achoo's Brother", about:'Cough attack!', status:'active', strength:9,  agility:6, wit:5, speed:6, wisdom:1, intelligence:9, magic:3, chi:2, healing_power:1, account_id:account3.id, updated_by:account3.id, created_by:account3.id})
 
 #add some battle invites
 battle1 = Battle.new
