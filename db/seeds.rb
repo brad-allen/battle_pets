@@ -21,8 +21,8 @@ account4 = Account.find_by(user_id:user4.id)
 account4.permission = 'admin'
 account4.save
 
- arena_url = "https://localhost:3001/"
- arena_port = "3000"
+ arena_url = "http://localhost:3001/"
+ arena_port = "3001"
 
 if Rails.env.production? 
  arena_url = "https://desolate-sierra-84556.herokuapp.com/"
