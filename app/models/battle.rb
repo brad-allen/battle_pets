@@ -119,20 +119,18 @@ class Battle < ApplicationRecord
 
   	end
 
-	def self.get_battle_from_response data
-		id = data[:original_id]
-		battle = Battle.find_by_id(id)
+	def update_battle_from_response data
 
-		return nil if !battle.present?
-
-		battle.battled_on = data[:battled_on]
-		battle.winning_pet_id = data[:winning_pet_id]
-		battle.winning_user_id = data[:winning_user_id]
-		battle.is_tie = data[:is_tie]
-		battle.status = data[:status]
-		
-		battle.save
-		battle
+	    self.winning_user_id = data[:winning_user_id]
+	    self.winning_pet_id = data[:winning_pet_id]
+	    self.winner_gold = data[:winner_gold]
+	    self.winner_experience = data[:winner_experience]
+	    self.loser_experience = data[:loser_experience]
+	    self.is_tie = data[:is_tie]
+	    self.status = data[:status]
+	    self.battled_on = data[:battled_on]
+	    self.score  = data[:score]
+		self.save
 	end
 
 	def self.create_training_battle battle_pet, arena_id

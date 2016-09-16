@@ -66,21 +66,14 @@ class V1::BattlesController < V1::V1Controller
   # PUT /battles/1/battle_update
   def battle_update
     puts "WELCOME BACK !!!!"
-    update_values = params.permit(:id, :battled_on, :winning_user_id, :winning_pet_id, :is_tie, :status, :original_id, :score, :call_auth_code, :winner_experience, :loser_experience, :winner_gold,)
+    update_values = params.permit(:id, :battled_on, :winning_user_id, :winning_pet_id, :is_tie, :status, :original_id, :score, :call_auth_code, :winner_experience, :loser_experience, :winner_gold)
     
-    updated_battle = Battle.get_battle_from_response update_values
     original_battle = Battle.find_by_id(update_values[:original_id])
 
     return head(:forbidden) unless update_values['call_auth_code'] == original_battle.call_auth_code
 
-
-    original_battle.winning_user_id = update_values[:winning_user_id]
-    original_battle.winning_pet_id = update_values[:winning_pet_id]
-    original_battle.is_tie = update_values[:is_tie]
-    original_battle.status = update_values[:status]
-    original_battle.battled_on = update_values[:battled_on]
-    original_battle.score  = update_values[:score]
-
+    original_battle.update_battle_from_response update_values
+    
     original_battle.process_battle_results 
 
     head(:ok)

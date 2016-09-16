@@ -116,7 +116,7 @@ class BattleTest < ActiveSupport::TestCase
 	  pending("battle test")
 	end
 
-	test "get_battle_from_response returns valid battle" do
+	test "update_battle_from_response returns valid battle" do
 	  pending("battle test")
 	end
 
