@@ -1,8 +1,8 @@
 class V1::BattlePetsController < V1::V1Controller
-  before_action :authenticate_user!, except: [:show, :index, :authed_get, :generate_training_pet, :leaderboard]
+  before_action :authenticate_user!, except: [:show, :index, :authed_get_pet_for_battle, :generate_training_pet, :leaderboard]
   before_action :check_admin_permissions, only: [:create]
   before_action only: [:show, :update] { |c| c.check_battle_pet params[:id] }
-  before_action only: [:battles, :authed_get, :train, :generate_training_pet] { |c| c.check_battle_pet params[:battle_pet_id] }
+  before_action only: [:battles, :authed_get_pet_for_battle, :train, :generate_training_pet] { |c| c.check_battle_pet params[:battle_pet_id] }
 
   def index
     @battle_pets = BattlePet.where(retired:false)
@@ -37,8 +37,10 @@ class V1::BattlePetsController < V1::V1Controller
 
   #Non restful endpoints
 
-  #TODO arena client auth
-  def authed_get
+  def authed_get_pet_for_battle
+    auth_code = params[:call_auth_code] if params[:call_auth_code].present? 
+    return head(:forbidden) unless params[:call_auth_code].present? && @battle_pet.pet_battle_exists(auth_code)
+
     respond_with @battle_pet
   end
 

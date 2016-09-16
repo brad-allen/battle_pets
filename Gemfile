@@ -39,6 +39,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   gem 'sqlite3', '1.3.11'
   gem 'byebug',  '9.0.0', platform: :mri
+  gem 'rspec-rails', '~> 3.4'
 end
 
 group :development do

@@ -61,6 +61,15 @@ class BattlePet < ApplicationRecord
     self.healing_power=more_healing_power
   end
 
+
+  def pet_battle_exists auth
+    #TODO update model associations for many to many battles to users
+    battles_started = Battle.where(pet1_id:id, call_auth_code:auth)
+    challenges = Battle.where(pet2_id:id, call_auth_code:auth)
+
+    return battles_started.present? || challenges.present?
+  end
+
   private
 
   def more_strength

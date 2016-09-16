@@ -10,22 +10,12 @@ class Battle < ApplicationRecord
   	validates :pet2_id, presence: true, numericality: { only_integer: true }
   	validates :status, presence: true, length: { maximum: 25 }, inclusion: { in: %w(auto-accepted battled invited accepted legendary denied), message: "Status is not valid" }, allow_nil: false
 
-	def send_battle_to_arena	 
-
+	def send_battle_to_arena	 		
 		self.save unless id.present?
 
-		fight_extension = id.to_s + '/fight'
-		uri = URI.parse(DEFAULT_ARENA_V1_BATTLES_URL + id.to_s + '/fight')	    #default for now, move to common area
-		
-		port = DEFAULT_ARENA_PORT
-
-	    if arena_id.present?
-	    	arena = Arena.find_by_id(arena_id)
-	    	if arena.present? && arena.id > 0
-				uri = URI.parse(arena.url+'/v1/battles/' +fight_extension) 				
-				port = arena.port
-	    	end
-	    end
+		arena = Arena.get_arena_for_fight arena_id
+		uri = URI.parse(arena.url + '/v1/battles/' + id.to_s + '/fight')	
+		port = arena.port
 
 		http = Net::HTTP.new(uri.host, port)
 		if USE_SSL
@@ -40,10 +30,7 @@ class Battle < ApplicationRecord
 			puts 'SENT ARENA BATTLE REQUEST : response =>' + response.inspect
 			true
 		rescue
-			puts 'FAILED ARENA BATTLE REQUEST : response =>' + response.inspect
-			puts 'FAILED ARENA BATTLE REQUEST : arena =>' + arena.inspect
-			puts 'FAILED ARENA BATTLE REQUEST : uri =>' + uri.inspect
-			
+			puts 'FAILED ARENA BATTLE REQUEST : response =>' + response.inspect			
 			false
 		end		
 	 end
@@ -70,6 +57,7 @@ class Battle < ApplicationRecord
 		is_training = pet2_id == -1
 
 		#training may not have real users or pets or a pet may disappear by the time the battle is over		
+		#TODO Move these to theirs respective models
 		winner = Account.find_by_id(winning_user_id.present? ? winning_user_id : -1)		
 		if(winner.present?)
 			
@@ -78,9 +66,7 @@ class Battle < ApplicationRecord
 			winner.gold = winner.gold + (winner_gold.present? ? winner_gold :  0)
 			winner.level_up
 			winner.save
-
 		end
-
 
 		winning_pet = BattlePet.find_by_id(winning_pet_id.present? ? winning_pet_id : -1)	
 		if(winning_pet.present?)
@@ -97,7 +83,6 @@ class Battle < ApplicationRecord
 			loser.experience = loser.experience + (loser_experience.present?  ? loser_experience :  0)
 			loser.level_up
 			loser.save
-
 		end
 
 		losing_pet = BattlePet.find_by_id(pet1_id != winning_pet_id ? pet1_id : pet2_id)

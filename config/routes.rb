@@ -30,7 +30,7 @@ Rails.application.routes.draw do
      resources :battle_pets do
         get :battles
         get :train
-        get :authed_get
+        post :authed_get_pet_for_battle
         get :generate_training_pet
      end
 

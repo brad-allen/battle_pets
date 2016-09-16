@@ -43,11 +43,18 @@ class V1::BattlePetsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "authed_get should get detailed battle pet information" do 
-    get :authed_get, :battle_pet_id => 1, format: :json
+  test "authed_get_pet_for_battle should get detailed battle pet information by client auth" do 
+    post :authed_get_pet_for_battle, params: { call_auth_code: 'qwerty', battle_pet_id: 1}, format: :json
+
     assert response.body.include? 'Milky Way'
     assert response.body.include? 'wisdom'    
     assert_response :success
+  end
+
+    test "authed_get_pet_for_battle should not get detailed battle pet information based upon user auth" do 
+    post :authed_get_pet_for_battle, params: { call_auth_code: 'not_qwerty', battle_pet_id: 1}, format: :json
+
+    assert_response :forbidden
   end
 
   test "battles should get battle information for the pet" do 

@@ -52,14 +52,14 @@ class V1::BattlePetsControllerAuthTest < ActionController::TestCase
     assert_response :unauthorized
   end
 
-=begin
-#TODO this endpoint is currently not client authed, but needs to be
-  test "authed_get should have client access" do 
-    get :authed_get, :battle_pet_id => 1, format: :json
-    assert response.body.include? 'Milky Way'
-    assert response.body.include? 'wisdom'    
+  test "authed_get_pet_for_battle should have client access regardless of user auth" do 
+    @battle_pet.save
+    @battle = battles(:one) 
+    @battle.save
+
+    post :authed_get_pet_for_battle, params: { call_auth_code: 'qwerty', battle_pet_id: 1}, format: :json
     assert_response :success
   end
-=end
+
 
 end
