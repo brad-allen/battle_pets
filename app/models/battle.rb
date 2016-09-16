@@ -3,7 +3,6 @@ require "uri"
 
 class Battle < ApplicationRecord
 	validates :name, presence: true, length: { maximum: 100 }
-  	validates :call_auth_code, presence: true
   	validates :user1_id, presence: true, numericality: { only_integer: true }
   	validates :user2_id, presence: true, numericality: { only_integer: true }
   	validates :pet1_id, presence: true, numericality: { only_integer: true }
