@@ -100,6 +100,7 @@ class Battle < ApplicationRecord
 			losing_pet.save
 		end
 
+		self.call_auth_code = nil # don't let it be used again for pet data lookups or battle responses
 		self.save
 
   	end
