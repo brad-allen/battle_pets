@@ -91,10 +91,10 @@ BattlePets
 	Battles
 
 		POST http://localhost:3000/v1/battles #create a battle
-		{:name, :user1_id, :user2_id, :arena_id, :pet1_id, :pet2_id, :play_for_keeps, :winner_experience, :loser_experience, :winner_gold, :battle_game_id}
+		{:name, :user1_id, :user2_id, :arena_id, :pet1_id, :pet2_id, :play_for_keeps, :battle_game_id}
 
 		PUT http://localhost:3000/v1/battles/1 #update a battle
-		{:name, :user1_id, :user2_id, :arena_id, :pet1_id, :pet2_id, :play_for_keeps, :winner_experience, :loser_experience, :winner_gold, :battle_game_id}
+		{:name, :user1_id, :user2_id, :arena_id, :pet1_id, :pet2_id, :play_for_keeps, :battle_game_id}
 
 		GET http://localhost:3000/v1/battles #list of all battles
 		
@@ -105,7 +105,7 @@ BattlePets
 		PUT http://localhost:3000/v1/battles/1/deny  #deny this battle requests
 
 		POST http://localhost:3000/v1/battles/1/battle_update # arena callback endpint, call is authed with token
-		{:id, :battled_on, :winning_user_id, :winning_pet_id, :is_tie, :status, :original_id, :score, :call_auth_code}
+		{:id, :battled_on, :winning_user_id, :winning_pet_id, :is_tie, :status, :original_id, :score, :winner_experience, :loser_experience, :winner_gold, :call_auth_code}
 
 
 	BattlePets
@@ -162,10 +162,10 @@ BattleArena
 	BattleGames
 
 		POST http://localhost:3001/v1/admin_users # create, admin only
-		{:name, :description, :strength, :agility, :wit, :speed, :wisdom, :intelligence, :magic, :chi, :healing, :status}
+		{:name, :description, :strength, :agility, :wit, :speed, :wisdom, :intelligence, :magic, :chi, :healing, :status, :winner_experience, :loser_experience, :winner_gold}
 
 		PUT http://localhost:3001/v1/admin_users/1 # update, admin only
-		{:name, :description, :strength, :agility, :wit, :speed, :wisdom, :intelligence, :magic, :chi, :healing, :status}
+		{:name, :description, :strength, :agility, :wit, :speed, :wisdom, :intelligence, :magic, :chi, :healing, :status, :winner_experience, :loser_experience, :winner_gold}
 
 		GET http://localhost:3001/v1/admin_users #list battle games
 		
@@ -239,7 +239,7 @@ Quick run:
 			What happens...
 			When the endpoint is called it creates a battle with a training pet.
 			The battle is sent to the Arena where a battle takes place.  During the battle, the arena app calls back to the pet manager to get pet info and to get the generated training pet's info (the training pets values are based on your pet's level, so they are closely matched).
-			When the battle is complete, the results are sent back to the manager to handle the battle rewards (experience and gold).
+			When the battle is complete, the battle results and rewards are sent back to the manager to distribute the battle rewards (experience and gold).
 
 			If a battle pet's experience update from the battle causes them to level up, then they also get random small boosts to their battle characteristics to help them in future battles.
 
