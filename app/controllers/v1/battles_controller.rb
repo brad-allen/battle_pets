@@ -66,7 +66,7 @@ class V1::BattlesController < V1::V1Controller
   # PUT /battles/1/battle_update
   def battle_update
     puts "WELCOME BACK !!!!"
-    update_values = params.permit(:id, :battled_on, :winning_user_id, :winning_pet_id, :is_tie, :status, :original_id, :score, :call_auth_code)
+    update_values = params.permit(:id, :battled_on, :winning_user_id, :winning_pet_id, :is_tie, :status, :original_id, :score, :call_auth_code, :winner_experience, :loser_experience, :winner_gold,)
     
     updated_battle = Battle.get_battle_from_response update_values
     original_battle = Battle.find_by_id(update_values[:original_id])
@@ -118,6 +118,6 @@ class V1::BattlesController < V1::V1Controller
   private
 
     def battle_params
-      params.permit(:name, :user1_id, :user2_id, :arena_id, :pet1_id, :pet2_id, :play_for_keeps, :winner_experience, :loser_experience, :winner_gold, :battle_game_id, :status)
+      params.permit(:name, :user1_id, :user2_id, :arena_id, :pet1_id, :pet2_id, :play_for_keeps, :battle_game_id, :status)
     end
 end

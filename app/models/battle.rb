@@ -2,9 +2,6 @@ require "net/http"
 require "uri"
 
 class Battle < ApplicationRecord
-	
-	#attr_accessor :arena_id, :id, 
-
 	validates :name, presence: true, length: { maximum: 100 }
   	validates :call_auth_code, presence: true
   	validates :user1_id, presence: true, numericality: { only_integer: true }
@@ -148,9 +145,6 @@ class Battle < ApplicationRecord
 	    battle.pet1_id = battle_pet.id
 	    battle.pet2_id = -1
 	    battle.battle_game_id = 1
-	    battle.winner_gold = 25
-	    battle.winner_experience = 100
-	    battle.loser_experience = 10
 	    battle.status = "accepted"
 	    battle.updated_by = battle_pet.account_id
 	    battle.created_by = battle_pet.account_id

@@ -62,6 +62,6 @@ class BattlesController < ApplicationController
     end
 
     def battle_params
-      params.require(:battle).permit(:name, :user1_id, :user2_id, :arena_id, :pet1_id, :pet2_id, :play_for_keeps, :winner_experience, :loser_experience, :winner_gold, :battle_game_id, :status)
+      params.require(:battle).permit(:name, :user1_id, :user2_id, :arena_id, :pet1_id, :pet2_id, :play_for_keeps, :battle_game_id, :status)
     end
 end

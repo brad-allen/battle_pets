@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :call_auth_code %>
-    <%= f.text_field :call_auth_code %>
+    <%= f.text_field :call_auth_code, :disabled=>true %>
   </div>
 
   <div class="field">
@@ -69,21 +69,6 @@
 <div class="field">
     <%= f.label :play_for_keeps %>
     <%= f.text_field :play_for_keeps %>
-  </div>
-
-<div class="field">
-    <%= f.label :winner_experience %>
-    <%= f.number_field :winner_experience %>
-  </div>
-
-<div class="field">
-    <%= f.label :loser_experience %>
-    <%= f.number_field :loser_experience %>
-  </div>
-
-<div class="field">
-    <%= f.label :winner_gold %>
-    <%= f.number_field :winner_gold %>
   </div>
 
  <div class="field">
