@@ -32,5 +32,11 @@ class CreateBattlePets < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+
+    add_index :battle_pets, :name, :name => 'battle_pets_name_idx'
+    add_index :battle_pets, :experience, :name => 'battle_pets_experience_idx'
+    add_index :battle_pets, :account_id, :name => 'battle_pets_account_id_idx'
+    add_index :battle_pets, :won, :name => 'battle_pets_won_idx'
   end
 end

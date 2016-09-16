@@ -11,5 +11,9 @@ class CreateArenas < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+
+    add_index :arenas, :name, :name => 'arenas_name_idx'
+    add_index :arenas, :rated, :name => 'arenas_rated_idx'
   end
 end

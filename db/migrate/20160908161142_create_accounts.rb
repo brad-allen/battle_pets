@@ -22,5 +22,12 @@ class CreateAccounts < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    add_index :accounts, :username, :name => 'accounts_username_idx'
+    add_index :accounts, :user_id, :name => 'accounts_user_id_idx'
+    add_index :accounts, :status, :name => 'accounts_status_idx'
+    add_index :accounts, :email, :name => 'accounts_email_idx'
+    add_index :accounts, :won, :name => 'accounts_won_idx'
+    add_index :accounts, :gold, :name => 'accounts_gold_idx'
   end
 end

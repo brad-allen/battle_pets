@@ -25,5 +25,15 @@ class CreateBattles < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+
+    add_index :battles, :name, :name => 'battles_name_idx'
+    add_index :battles, :call_auth_code, :name => 'battles_call_auth_code_idx'
+    add_index :battles, :user1_id, :name => 'battles_user1_id_idx'
+    add_index :battles, :user2_id, :name => 'battles_user2_id_idx'
+    add_index :battles, :pet1_id, :name => 'battles_pet1_id_idx'
+    add_index :battles, :pet2_id, :name => 'battles_pet2_id_idx'
+    add_index :battles, :battled_on, :name => 'battles_battled_on_idx'
+
   end
 end

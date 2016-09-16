@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(version: 20160908164438) do
     t.integer  "created_by"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.index ["email"], name: "accounts_email_idx"
+    t.index ["gold"], name: "accounts_gold_idx"
+    t.index ["status"], name: "accounts_status_idx"
+    t.index ["user_id"], name: "accounts_user_id_idx"
+    t.index ["username"], name: "accounts_username_idx"
+    t.index ["won"], name: "accounts_won_idx"
   end
 
   create_table "arenas", force: :cascade do |t|
@@ -45,6 +51,8 @@ ActiveRecord::Schema.define(version: 20160908164438) do
     t.integer  "created_by"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["name"], name: "arenas_name_idx"
+    t.index ["rated"], name: "arenas_rated_idx"
   end
 
   create_table "battle_pets", force: :cascade do |t|
@@ -78,6 +86,10 @@ ActiveRecord::Schema.define(version: 20160908164438) do
     t.integer  "created_by"
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false
+    t.index ["account_id"], name: "battle_pets_account_id_idx"
+    t.index ["experience"], name: "battle_pets_experience_idx"
+    t.index ["name"], name: "battle_pets_name_idx"
+    t.index ["won"], name: "battle_pets_won_idx"
   end
 
   create_table "battles", force: :cascade do |t|
@@ -104,6 +116,13 @@ ActiveRecord::Schema.define(version: 20160908164438) do
     t.integer  "created_by"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+    t.index ["battled_on"], name: "battles_battled_on_idx"
+    t.index ["call_auth_code"], name: "battles_call_auth_code_idx"
+    t.index ["name"], name: "battles_name_idx"
+    t.index ["pet1_id"], name: "battles_pet1_id_idx"
+    t.index ["pet2_id"], name: "battles_pet2_id_idx"
+    t.index ["user1_id"], name: "battles_user1_id_idx"
+    t.index ["user2_id"], name: "battles_user2_id_idx"
   end
 
   create_table "users", force: :cascade do |t|
